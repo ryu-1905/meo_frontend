@@ -1,3 +1,8 @@
 {
-  "test": "Bài kiểm tra"
+  "search notes": "tìm kiếm ghi chú...",
+  "last updated": "cập nhật lần cuối",
+  "add new note": "thêm ghi chú mới",
+  "settings": "cài đặt",
+  "check": "kiểm tra",
+  "server URL": "URL máy chủ"
 }
