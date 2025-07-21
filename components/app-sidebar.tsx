@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Sidebar,
   SidebarContent,
@@ -5,14 +7,15 @@ import {
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
-  SidebarHeader,
   SidebarMenu,
-  SidebarMenuButton,
   SidebarMenuItem,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { Button } from "./ui/button";
 import { useTranslations } from "next-intl";
+import useUserStore from "@/store/user-store";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import LoginOrRegisterForm from "./login";
 
 /**
  * app sidebar
@@ -24,6 +27,7 @@ import { useTranslations } from "next-intl";
  */
 const AppSidebar = () => {
   const t = useTranslations();
+  const user = useUserStore((state) => state);
 
   return (
     <Sidebar side="right">
@@ -36,9 +40,21 @@ const AppSidebar = () => {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
-        <Button variant="secondary" aria-label={t("open sidebar")} asChild>
-          <SidebarTrigger />
-        </Button>
+        <SidebarMenu>
+          <SidebarMenuItem className="flex items-center justify-between">
+            <Button variant="secondary" aria-label={t("open sidebar")} asChild>
+              <SidebarTrigger />
+            </Button>
+            {user.userId ? (
+              <Avatar>
+                <AvatarImage src={user.avatar} />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+            ) : (
+              <LoginOrRegisterForm />
+            )}
+          </SidebarMenuItem>
+        </SidebarMenu>
       </SidebarFooter>
     </Sidebar>
   );

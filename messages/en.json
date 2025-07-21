@@ -9,5 +9,12 @@
   "content": "content",
   "bold": "bold",
   "all commands": "all commands",
-  "open sidebar": "open sidebar"
+  "open sidebar": "open sidebar",
+  "login": "login",
+  "login or register (if you don't have an account)": "login or register (if you don't have an account)",
+  "email": "email",
+  "password": "password",
+  "confirm password": "confirm password",
+  "have not account": "I don't have an account",
+  "register": "register"
 }

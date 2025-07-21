@@ -9,5 +9,12 @@
   "content": "内容",
   "bold": "太字",
   "all commands": "すべてのコマンド",
-  "open sidebar": "オープンサイドバー"
+  "open sidebar": "オープンサイドバー",
+  "login": "ログイン",
+  "login or register (if you don't have an account)": "ログインまたは登録（アカウントがない場合）",
+  "email": "メール",
+  "password": "パスワード",
+  "confirm password": "パスワードを認証する",
+  "have not account": "私はアカウントを持っていません",
+  "register": "登録する"
 }

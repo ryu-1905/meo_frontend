@@ -9,5 +9,12 @@
   "content": "nội dung",
   "bold": "in đậm",
   "all commands": "Tất cả các lệnh",
-  "open sidebar": "Mở thanh bên"
+  "open sidebar": "Mở thanh bên",
+  "login": "Đăng nhập",
+  "login or register (if you don't have an account)": "Đăng nhập hoặc đăng ký (nếu bạn không có tài khoản)",
+  "email": "e-mail",
+  "password": "mật khẩu",
+  "confirm password": "Xác nhận mật khẩu",
+  "have not account": "Tôi không có tài khoản",
+  "register": "đăng ký"
 }
