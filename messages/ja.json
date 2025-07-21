@@ -4,5 +4,9 @@
   "add new note": "新しいメモを追加します",
   "settings": "設定",
   "check": "チェック",
-  "server URL": "サーバー URL"
+  "server URL": "サーバー URL",
+  "title": "タイトル",
+  "content": "内容",
+  "bold": "太字",
+  "all commands": "すべてのコマンド"
 }

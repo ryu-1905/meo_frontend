@@ -13,6 +13,7 @@ import { Check, Settings, X } from "lucide-react";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import useSettingStore from "@/store/setting-store";
+import { cn } from "@/lib/utils";
 
 /**
  * Settings UI
@@ -55,6 +56,12 @@ const SettingsDialog = () => {
             type="button"
             onClick={setting.checkServerConnection}
             variant="secondary"
+            className={cn(
+              "border-2",
+              setting.server.isConnecting
+                ? "border-green-500"
+                : "border-red-500"
+            )}
           >
             {t("check")}
             {setting.server.isConnecting

@@ -4,5 +4,9 @@
   "add new note": "thêm ghi chú mới",
   "settings": "cài đặt",
   "check": "kiểm tra",
-  "server URL": "URL máy chủ"
+  "server URL": "URL máy chủ",
+  "title": "tiêu đề",
+  "content": "nội dung",
+  "bold": "in đậm",
+  "all commands": "Tất cả các lệnh"
 }

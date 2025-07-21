@@ -4,5 +4,9 @@
   "add new note": "add new note",
   "settings": "settings",
   "check": "check",
-  "server URL": "server URL"
+  "server URL": "server URL",
+  "title": "title",
+  "content": "content",
+  "bold": "bold",
+  "all commands": "all commands"
 }

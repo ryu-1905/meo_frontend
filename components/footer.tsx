@@ -2,6 +2,7 @@ import { Plus } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import SettingsDialog from "./settingsDialog";
+import { Link } from "@/i18n/navigation";
 
 /**
  * Footer
@@ -18,8 +19,10 @@ const Footer = () => {
       <h1 className="font-bold">Meo Notes</h1>
       <div className="flex gap-3">
         <SettingsDialog />
-        <Button variant="secondary" aria-label={t("add new note")}>
-          <Plus />
+        <Button variant="secondary" aria-label={t("add new note")} asChild>
+          <Link href="/note">
+            <Plus />
+          </Link>
         </Button>
       </div>
     </div>
