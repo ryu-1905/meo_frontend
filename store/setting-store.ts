@@ -8,7 +8,7 @@ import { combine, devtools, persist } from "zustand/middleware";
  * DATE        |  AUTHOR   |  DESCRIPTION
  * -------------------------------------
  * 17-07-2025  |   Ryu     |    Create (mock data)
- * 25-07-2025  |   Ryu     |    Update feature to check server connection
+ * 25-07-2025  |   Ryu     |    Fix feature to check server connection
  */
 
 const useSettingStore = create(
