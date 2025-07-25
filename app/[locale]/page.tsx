@@ -68,7 +68,7 @@ const mockNotes: Note[] = [
   },
 ];
 
-const NotesPage = () => {
+const Notes = () => {
   const t = useTranslations();
   const format = useFormatter();
 
@@ -91,4 +91,4 @@ const NotesPage = () => {
   );
 };
 
-export default NotesPage;
+export default Notes;

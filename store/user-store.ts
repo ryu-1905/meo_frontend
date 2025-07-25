@@ -8,32 +8,33 @@ import { combine, devtools, persist } from "zustand/middleware";
  * DATE        |  AUTHOR   |  DESCRIPTION
  * -------------------------------------
  * 17-07-2025  |   Ryu     |    Create (mock data)
- * 25-07-2025  |   Ryu     |    Fix feature to check server connection
  */
 
-const useSettingStore = create(
+const useUserStore = create(
   devtools(
     persist(
       combine(
         {
-          server: { url: "", isConnecting: false },
+          userId: "",
+          name: "",
+          avatar: "https://github.com/shadcn.png",
+          authToken: "",
+          refreshToken: "",
         },
         (set) => ({
-          checkServerConnection: () =>
+          changeUserId: (newUserId: string) => {
             set((state) => ({
               ...state,
-              server: {
-                ...state.server,
-                isConnecting: !state.server.isConnecting,
-              },
-            })),
+              userId: newUserId,
+            }));
+          },
         })
       ),
       {
-        name: "settings-storage",
+        name: "user-storage",
       }
     )
   )
 );
 
-export default useSettingStore;
+export default useUserStore;

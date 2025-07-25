@@ -3,9 +3,11 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import "./globals.css";
+import "../globals.css";
 import Footer from "@/components/footer";
 import Search from "@/components/search";
+import { SidebarProvider } from "@/components/ui/sidebar";
+import AppSidebar from "@/components/app-sidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,9 +42,14 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased px-4 dark`}
       >
         <NextIntlClientProvider>
-          <Search />
-          {children}
-          <Footer />
+          <SidebarProvider>
+            <div className="w-full flex flex-col">
+              <Search />
+              {children}
+              <Footer />
+            </div>
+            <AppSidebar />
+          </SidebarProvider>
         </NextIntlClientProvider>
       </body>
     </html>

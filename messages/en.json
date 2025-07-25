@@ -3,6 +3,17 @@
   "last updated": "last updated",
   "add new note": "add new note",
   "settings": "settings",
-  "check": "check",
-  "server URL": "server URL"
+  "check connection to server": "check connection to server",
+  "title": "title",
+  "content": "content",
+  "bold": "bold",
+  "all commands": "all commands",
+  "open sidebar": "open sidebar",
+  "login": "login",
+  "login or register (if you don't have an account)": "login or register (if you don't have an account)",
+  "email": "email",
+  "password": "password",
+  "confirm password": "confirm password",
+  "have not account": "I don't have an account",
+  "register": "register"
 }

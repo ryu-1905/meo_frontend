@@ -3,6 +3,17 @@
   "last updated": "最後に更新されました",
   "add new note": "新しいメモを追加します",
   "settings": "設定",
-  "check": "チェック",
-  "server URL": "サーバー URL"
+  "check connection to server": "サーバーへの接続を確認します",
+  "title": "タイトル",
+  "content": "内容",
+  "bold": "太字",
+  "all commands": "すべてのコマンド",
+  "open sidebar": "オープンサイドバー",
+  "login": "ログイン",
+  "login or register (if you don't have an account)": "ログインまたは登録（アカウントがない場合）",
+  "email": "メール",
+  "password": "パスワード",
+  "confirm password": "パスワードを認証する",
+  "have not account": "私はアカウントを持っていません",
+  "register": "登録する"
 }

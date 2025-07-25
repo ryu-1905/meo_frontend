@@ -3,6 +3,17 @@
   "last updated": "cập nhật lần cuối",
   "add new note": "thêm ghi chú mới",
   "settings": "cài đặt",
-  "check": "kiểm tra",
-  "server URL": "URL máy chủ"
+  "check connection to server": "kiểm tra kết nối đến máy chủ",
+  "title": "tiêu đề",
+  "content": "nội dung",
+  "bold": "in đậm",
+  "all commands": "Tất cả các lệnh",
+  "open sidebar": "Mở thanh bên",
+  "login": "Đăng nhập",
+  "login or register (if you don't have an account)": "Đăng nhập hoặc đăng ký (nếu bạn không có tài khoản)",
+  "email": "e-mail",
+  "password": "mật khẩu",
+  "confirm password": "Xác nhận mật khẩu",
+  "have not account": "Tôi không có tài khoản",
+  "register": "đăng ký"
 }
