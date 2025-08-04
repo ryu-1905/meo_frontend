@@ -2,8 +2,6 @@ import { useTranslations } from "next-intl";
 import { Input } from "./ui/input";
 
 /**
- * Search
- *
  * Modification Logs:
  * DATE        |  AUTHOR   |  DESCRIPTION
  * -------------------------------------

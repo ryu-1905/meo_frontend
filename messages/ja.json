@@ -15,5 +15,12 @@
   "password": "パスワード",
   "confirm password": "パスワードを認証する",
   "have not account": "私はアカウントを持っていません",
-  "register": "登録する"
+  "register": "登録する",
+  "please login to use this application": "このアプリケーションを使用するには、ログインしてください",
+  "cancel": "キャンセル",
+  "logout": "ログアウト",
+  "profile": "プロフィール",
+  "anonymous": "匿名",
+  "nick name": "ニックネーム",
+  "save": "保存"
 }

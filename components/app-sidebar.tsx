@@ -13,13 +13,9 @@ import {
 } from "@/components/ui/sidebar";
 import { Button } from "./ui/button";
 import { useTranslations } from "next-intl";
-import useUserStore from "@/store/user-store";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import LoginOrRegisterForm from "./login";
+import CustomAvatar from "./custom-avatar";
 
 /**
- * app sidebar
- *
  * Modification Logs:
  * DATE        |  AUTHOR   |  DESCRIPTION
  * -------------------------------------
@@ -27,7 +23,6 @@ import LoginOrRegisterForm from "./login";
  */
 const AppSidebar = () => {
   const t = useTranslations();
-  const user = useUserStore((state) => state);
 
   return (
     <Sidebar side="right">
@@ -45,14 +40,7 @@ const AppSidebar = () => {
             <Button variant="secondary" aria-label={t("open sidebar")} asChild>
               <SidebarTrigger />
             </Button>
-            {user.userId ? (
-              <Avatar>
-                <AvatarImage src={user.avatar} />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
-            ) : (
-              <LoginOrRegisterForm />
-            )}
+            <CustomAvatar />
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarFooter>

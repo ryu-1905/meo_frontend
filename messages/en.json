@@ -15,5 +15,12 @@
   "password": "password",
   "confirm password": "confirm password",
   "have not account": "I don't have an account",
-  "register": "register"
+  "register": "register",
+  "please login to use this application": "please login to use this application",
+  "cancel": "cancel",
+  "profile": "profile",
+  "logout": "logout",
+  "anonymous": "anonymous",
+  "nick name": "nick name",
+  "save": "save"
 }

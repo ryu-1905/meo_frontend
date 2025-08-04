@@ -1,5 +1,4 @@
 import { useFormatter, useTranslations } from "next-intl";
-import { Input } from "@/components/ui/input";
 import {
   Card,
   CardContent,
@@ -9,8 +8,6 @@ import {
 } from "@/components/ui/card";
 
 /**
- * Home page
- *
  * Modification Logs:
  * DATE        |  AUTHOR   |  DESCRIPTION
  * -------------------------------------

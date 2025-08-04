@@ -14,8 +14,6 @@ import useSettingStore from "@/store/setting-store";
 import { cn } from "@/lib/utils";
 
 /**
- * Settings UI
- *
  * Modification Logs:
  * DATE        |  AUTHOR   |  DESCRIPTION
  * -------------------------------------

@@ -2,14 +2,11 @@
 
 import { useTranslations } from "next-intl";
 import { Separator } from "@/components/ui/separator";
-import { Textarea } from "@/components/ui/textarea";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import EditorContextMenu from "@/components/editor-context-menu";
 
 /**
- * Note
- *
  * Modification Logs:
  * DATE        |  AUTHOR   |  DESCRIPTION
  * -------------------------------------
