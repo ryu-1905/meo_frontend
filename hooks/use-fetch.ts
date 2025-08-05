@@ -1,3 +1,4 @@
+import useUserStore from "@/store/user-store";
 import axios, { AxiosRequestConfig } from "axios";
 import useSWR from "swr";
 
@@ -11,15 +12,19 @@ const axiosInstance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,
 });
 
-const fetcher = (url: string, config?: AxiosRequestConfig<any>) =>
-  axios.get(url, config).then((res) => res.data);
+const fetcher = <T>(url: string, config?: AxiosRequestConfig<any>) =>
+  axiosInstance.get<T>(url, config).then((res) => res.data);
 
-const useFetch = (pathname: string, config?: AxiosRequestConfig<any>) => {
-  const result = useSWR(process.env.NEXT_PUBLIC_BACKEND_URL + pathname, (url) =>
-    fetcher(url, config)
+export const useFetch = <T>(
+  pathname: string,
+  config?: AxiosRequestConfig<any>
+) => {
+  const user = useUserStore((state) => state);
+
+  return useSWR<T>(
+    user.userId ? process.env.NEXT_PUBLIC_BACKEND_URL + pathname : null,
+    (url: string) => fetcher<T>(url, config)
   );
-
-  return result;
 };
 
-export { axiosInstance as axios, useFetch };
+export { axiosInstance as axios };
