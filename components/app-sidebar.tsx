@@ -8,12 +8,18 @@ import {
   SidebarGroupContent,
   SidebarGroupLabel,
   SidebarMenu,
+  SidebarMenuButton,
   SidebarMenuItem,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { Button } from "./ui/button";
 import { useTranslations } from "next-intl";
 import CustomAvatar from "./custom-avatar";
+import { axios, useFetch } from "@/hooks/use-fetch";
+import { Note } from "@/app/[locale]/note/[noteId]/page";
+import { pageable } from "@/app/[locale]/page";
+import { Link } from "@/i18n/navigation";
+import { Trash2 } from "lucide-react";
 
 /**
  * Modification Logs:
@@ -24,13 +30,35 @@ import CustomAvatar from "./custom-avatar";
 const AppSidebar = () => {
   const t = useTranslations();
 
+  const { data } = useFetch<{
+    content: Note[];
+    pageable: pageable;
+  }>("/note/get-all");
+
+  const deleteNote = async (noteId: number) => {
+    await axios.delete(`/note/delete/${noteId}`);
+  };
+
+  const renderData = data?.content.map((note) => (
+    <SidebarMenuItem key={note.id}>
+      <SidebarMenuButton asChild>
+        <Link href={`/note/${note.id}`} className="flex justify-between">
+          {note.title}{" "}
+          <button onClick={() => deleteNote(note.id)}>
+            <Trash2 />
+          </button>
+        </Link>
+      </SidebarMenuButton>
+    </SidebarMenuItem>
+  ));
+
   return (
     <Sidebar side="right">
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Notes</SidebarGroupLabel>
           <SidebarGroupContent>
-            <SidebarMenu>ad</SidebarMenu>
+            <SidebarMenu>{renderData}</SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>

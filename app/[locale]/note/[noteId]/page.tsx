@@ -5,6 +5,9 @@ import { Separator } from "@/components/ui/separator";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import EditorContextMenu from "@/components/editor-context-menu";
+import { use, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { axios } from "@/hooks/use-fetch";
 
 /**
  * Modification Logs:
@@ -12,7 +15,16 @@ import EditorContextMenu from "@/components/editor-context-menu";
  * -------------------------------------
  * 21-07-2025  |   Ryu     |    Create
  */
-const Note = () => {
+
+export type Note = {
+  id: number;
+  title: string;
+  content: string;
+  updatedAt: string;
+};
+
+const Note = ({ params }: { params: Promise<{ noteId: number }> }) => {
+  const { noteId } = use(params);
   const t = useTranslations();
 
   const editorTitle = useEditor({
@@ -27,6 +39,31 @@ const Note = () => {
     immediatelyRender: false,
   });
 
+  const fetchNote = async () => {
+    const response = await axios.get<Note>(`/note/get/${noteId}`);
+    const responseData = response.data;
+
+    editorTitle?.commands.setContent(responseData.title);
+    editorContent?.commands.setContent(responseData.content);
+  };
+
+  useEffect(() => {
+    fetchNote();
+  }, [noteId, editorTitle, editorContent]);
+
+  const updateNote = async () => {
+    const response = await axios.put<Note>("/note/update", {
+      id: noteId,
+      title: editorTitle?.getText(),
+      content: editorContent?.getText(),
+    });
+
+    const responseData = response.data;
+
+    editorTitle?.commands.setContent(responseData.title);
+    editorContent?.commands.setContent(responseData.content);
+  };
+
   return (
     <main className="w-full bg-neutral-900 border-4 rounded-2xl">
       <EditorContextMenu editor={editorTitle}>
@@ -39,6 +76,7 @@ const Note = () => {
       <EditorContextMenu editor={editorContent}>
         <EditorContent editor={editorContent} className=" border-t-0 p-2" />
       </EditorContextMenu>
+      <Button onClick={() => updateNote()}>{t("save")}</Button>
     </main>
   );
 };
