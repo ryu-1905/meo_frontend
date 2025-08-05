@@ -42,7 +42,7 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased px-4 dark`}
       >
         <NextIntlClientProvider>
-          <SidebarProvider>
+          <SidebarProvider defaultOpen={false}>
             <div className="w-full flex flex-col">
               <Search />
               {children}

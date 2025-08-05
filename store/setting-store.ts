@@ -2,8 +2,6 @@ import { create } from "zustand";
 import { combine, devtools, persist } from "zustand/middleware";
 
 /**
- * Manage setting state.
- *
  * Modification Logs:
  * DATE        |  AUTHOR   |  DESCRIPTION
  * -------------------------------------

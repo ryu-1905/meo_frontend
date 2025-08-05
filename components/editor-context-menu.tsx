@@ -17,8 +17,6 @@ import {
 import { useTranslations } from "next-intl";
 
 /**
- * Editor Context Menu
- *
  * Modification Logs:
  * DATE        |  AUTHOR   |  DESCRIPTION
  * -------------------------------------
